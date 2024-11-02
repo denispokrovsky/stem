@@ -42,7 +42,32 @@ def process_pdf(pdf_file):
         trust_remote_code=True
     )
     
-    # Extract financial data using models
-    # Implementation of extraction logic here
+# Extract financial data using Qwen
+    financial_data = {}
+    for page in relevant_pages:
+        # Prepare prompt for financial data extraction
+        messages = [
+            {
+                "role": "user",
+                "content": [
+                    {
+                        "type": "image",
+                        "image": images[page["page_num"]],
+                    },
+                    {
+                        "type": "text",
+                        "text": "Extract the following financial metrics if present: Total Debt, Cash, EBITDA, Interest Expense, Total Assets, Total Equity. Return as JSON."
+                    },
+                ]
+            }
+        ]
+        
+        # Process with Qwen
+        inputs = processor(messages)
+        outputs = model.generate(**inputs)
+        extracted = processor.decode(outputs)
+        
+        # Update financial data dictionary
+        financial_data.update(extracted)
     
-    return extracted_data
+    return financial_data
