@@ -1,5 +1,5 @@
 ---
-title: Stem F.S.
+title: stem
 emoji: 📊
 colorFrom: blue
 colorTo: indigo
