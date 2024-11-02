@@ -1,11 +1,12 @@
 ---
-title: FS
-
-colorFrom: blue  # First color 
-colorTo: indigo  # Second color
-sdk: streamlit # SDK 
-app_file: app.py  
-pinned: false  
+title: Stem F.S.
+emoji: 📊
+colorFrom: blue
+colorTo: indigo
+sdk: streamlit
+sdk_version: 1.27.2
+app_file: app.py
+pinned: false
 ---
 
 # Project Name
