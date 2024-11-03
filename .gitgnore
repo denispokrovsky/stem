@@ -1,0 +1,20 @@
+@"
+# Virtual Environment
+venv/
+.venv/
+ENV/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# IDE settings
+.vscode/
+.idea/
+"@ | Out-File -FilePath .gitignore -Encoding utf8
